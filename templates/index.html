@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>App</title>
+            <style>
+              h1 {color:red;}
+              form {color:blue;}
+              h2 {color:rgb(12, 128, 79);}
+              input {color:aqua}
+              button {color:blue}
+
+            </style>
+    </head>
+    <body>
+        <h2>Hello...!</h2>
+        <h1>Predict Species:</h1>
+        <div class="container text-center">
+        <form action="/predict" method="POST">
+            <input type="text" name="spl" placeholder='Sepel Length(CM)'><br>
+            <input type="text" name="spw" placeholder='Sepel Width(CM)'><br>
+            <input type="text" name="ptl" placeholder='Petal Length(CM)'><br>
+            <input type="text" name="ptw" placeholder='Sepel Width(CM)'><br>
+
+            <button class='btn btn-success'>Predict</button>
+        </form>
+        <div class="row">
+            {% if prediction %}
+            
+            <h2>Your Species is:</h2><h2 class="text-warning">{{prediction}}</h2>
+            {% endif %}
+        </div>
+    </div>
+
+    </body>
+</html>
